@@ -1,0 +1,21 @@
+:root {
+    --deleteColor: rgb(121, 15, 15);
+    --titleColor: rgb(12, 12, 100);
+    --textColor: rgba(0, 0, 0, 0.7);
+}
+
+.button {
+    color: white;
+    outline: none;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.remove {
+    background-color: var(--deleteColor);
+}
+
+.load {
+    background-color: var(--titleColor);
+}

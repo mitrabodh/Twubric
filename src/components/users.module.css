@@ -1,0 +1,71 @@
+:root {
+    --titleColor: rgb(12, 12, 100);
+    --textColor: rgba(0, 0, 0, 0.7);
+}
+
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    margin-bottom: 10px;
+}
+
+img {
+    border-radius: 50%;
+}
+
+h4 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(10, 54, 25, 0.7);
+    color: white;
+    padding: 3%;
+}
+
+h5 {
+    color: var(--textColor);
+}
+
+span {
+    color: black;
+}
+
+h3 {
+    color: var(--titleColor);
+}
+
+.flexColumn {
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10%;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.card {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color: white;
+}
+
+@media screen and (min-width:900px) {
+    .container {
+        justify-content: flex-start;
+    }
+}

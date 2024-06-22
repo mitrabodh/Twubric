@@ -1,0 +1,107 @@
+:root {
+    --titleColor: rgb(12, 12, 100);
+    --sort: rgb(43, 150, 226);
+    --sort-hover: rgba(43, 150, 226, 0.5);
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: var(--sort);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+
+ul li:first-child {
+    position: relative;
+
+}
+
+ul li:first-child span {
+    position: absolute;
+    right: 5px;
+}
+
+
+.dropdown {
+    margin-top: 20px;
+
+}
+
+.menu {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    top: 70px;
+    flex-direction: column;
+    color: white;
+    border-radius: 5px;
+    background-color: var(--sort);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.menu>div {
+    padding: 10px;
+}
+
+.menu>div:hover {
+    cursor: pointer;
+    background-color: rgba(12, 12, 100, 0.37);
+}
+
+.menu>div:last-child:hover {
+    border-radius: 0 0 5px 5px;
+}
+
+.menu>div:first-child:hover {
+    border-radius: 5px 5px 0 0;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 2vh;
+}
+
+
+
+ul li {
+    min-width: 150px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(226, 237, 233);
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+ul li:nth-child(n+2):hover {
+    background-color: var(--titleColor);
+    color: rgb(255, 255, 255)
+}
+
+ul li:last-child {
+    border-radius: 0 0 5px 5px;
+}
+
+/* @media screen and (min-width:900px) {
+    .container {
+        justify-content: flex-start;
+        margin-left: 2%;
+    }
+} */
