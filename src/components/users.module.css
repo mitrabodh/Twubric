@@ -56,6 +56,15 @@ h3 {
 
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.main>div:nth-child(2) {
+    align-self: center;
+}
+
 .card {
     margin-top: 20px;
     padding: 20px;

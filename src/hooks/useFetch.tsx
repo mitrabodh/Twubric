@@ -2,7 +2,7 @@ import api from "../api/users"
 import { useEffect } from "react"
 import { useState } from "react"
 
-export default function useFetch(sort: string, setSort: any) {
+export default function useFetch(criteria: any) {
     interface usersData {
         fullname: string,
         id: string,
@@ -29,23 +29,48 @@ export default function useFetch(sort: string, setSort: any) {
 
                     let dataArray = res.data.map((element: any) => ({ id: element.id, uid: element.uid, fullname: element.fullname, image: element.image, twubric: element.twubric, join_date: new Date(element.join_date * 1000).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) }));
 
-                    if (sort === "total") {
+                    if (criteria[0].total === true) {
 
                         const newDataArray = dataArray.sort((a: any, b: any) => a.twubric.total - b.twubric.total);
 
                         setUsers(newDataArray.splice(0, `${uselen}`));
-                    } else if (sort === "friends") {
+
+
+
+                    } else if (criteria[0].total === false) {
+                        const newDataArray = dataArray.sort((a: any, b: any) => b.twubric.total - a.twubric.total);
+
+                        setUsers(newDataArray.splice(0, `${uselen}`));
+                    } else if (criteria[0].friends === true) {
 
                         const newDataArray = dataArray.sort((a: any, b: any) => a.twubric.friends - b.twubric.friends);
 
                         setUsers(newDataArray.splice(0, `${uselen}`));
-                    } else if (sort === "influence") {
+
+                    } else if (criteria[0].friends === false) {
+                        const newDataArray = dataArray.sort((a: any, b: any) => b.twubric.friends - a.twubric.friends);
+
+                        setUsers(newDataArray.splice(0, `${uselen}`));
+                    } else if (criteria[0].influence === true) {
+
                         const newDataArray = dataArray.sort((a: any, b: any) => a.twubric.influence - b.twubric.influence);
+
                         setUsers(newDataArray.splice(0, `${uselen}`));
-                    } else if (sort === "chirpiness") {
+
+
+                    } else if (criteria[0].influence === false) {
+                        const newDataArray = dataArray.sort((a: any, b: any) => b.twubric.influence - a.twubric.influence);
+
+                        setUsers(newDataArray.splice(0, `${uselen}`));
+
+                    } else if (criteria[0].chirpiness === true) {
+
                         const newDataArray = dataArray.sort((a: any, b: any) => a.twubric.chirpiness - b.twubric.chirpiness);
+
                         setUsers(newDataArray.splice(0, `${uselen}`));
-                    } else {
+
+                    }
+                    else {
                         setUsers(dataArray.splice(0, `${uselen}`));
                     }
 
@@ -64,7 +89,7 @@ export default function useFetch(sort: string, setSort: any) {
 
         }
         fetchData();
-    }, [setUsers, uselen, sort])
+    }, [setUsers, uselen, criteria])
 
 
     function onRemove(id: string): usersData[] | undefined {

@@ -8,7 +8,7 @@ export default function Users({ users, total, onRemove, setUselen }: { users: an
 
     if (users?.length) {
         return (
-            <>
+            <div className={styles.main}>
                 <div className={styles.container}>{users.map((user: any) => {
                     return (<div key={user.id} className={styles.card}  >
                         <img src={user.image} alt="" />
@@ -38,8 +38,8 @@ export default function Users({ users, total, onRemove, setUselen }: { users: an
                     </div>)
                 })}
                 </div>
-                {users.length < total ? <Load setUselen={setUselen}>Load More</Load> : ""}
-            </>
+                <div>{users.length < total ? <Load setUselen={setUselen}>Load More</Load> : ""}</div>
+            </div>
         )
     }
     return (<p>You have zero followers.</p>)
