@@ -17,7 +17,8 @@ button {
     background-color: var(--sort);
     color: white;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 0px;
+    box-sizing: border-box;
     border: none;
     display: flex;
     align-items: center;
@@ -44,11 +45,12 @@ ul li:first-child span {
 .menu {
     position: absolute;
     display: flex;
-
-    top: 70px;
+    top: 85px;
     flex-direction: column;
     color: white;
-    border-radius: 5px;
+    width: 95px;
+    max-width: 95px;
+
     background-color: var(--sort);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
@@ -106,9 +108,15 @@ ul li:last-child {
     border-radius: 0 0 5px 5px;
 }
 
-/* @media screen and (min-width:900px) {
-    .container {
-        justify-content: flex-start;
-        margin-left: 2%;
+
+@media screen and (max-width:340px) {
+    button {
+        width: 100px;
     }
-} */
+
+    .menu {
+        width: 100px;
+        max-width: 100px;
+    }
+
+}

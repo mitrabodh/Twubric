@@ -6,3 +6,10 @@
 .App {
   text-align: center;
 }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-around;
+}

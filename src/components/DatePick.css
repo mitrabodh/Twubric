@@ -1,0 +1,40 @@
+:root {
+    --dateColor: rgb(12, 12, 100);
+}
+
+.date-main {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.react-datepicker__input-container input {
+    padding: 5px 5px 5px 25px;
+    color: var(--dateColor);
+    border: 1px solid var(--dateColor);
+    outline: none;
+}
+
+.calicon {
+    margin-top: -4px;
+    color: var(--dateColor);
+
+}
+
+.calendar {
+    margin-left: 80px;
+
+}
+
+.react-datepicker__input-container input::placeholder {
+    color: var(--dateColor);
+}
+
+
+@media screen and (max-width:640px) {
+    .date-main {
+        flex-direction: column;
+    }
+
+}

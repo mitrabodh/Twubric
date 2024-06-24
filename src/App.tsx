@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import User from "./components/Users"
 import Sort from "./components/Sort"
+import DatePick from './components/DatePick';
 import useFetch from "./hooks/useFetch"
 import './App.css';
 
@@ -15,7 +16,10 @@ function App() {
 
   return (
     <div className="App">
-      <Sort criteria={criteria} setCriteria={setCriteria} />
+      <div className='header'>
+        <DatePick />
+        <Sort criteria={criteria} setCriteria={setCriteria} />
+      </div>
       <User users={users} onRemove={onRemove} setUselen={setUselen} total={total} />
     </div>
   );

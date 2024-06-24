@@ -9,7 +9,7 @@
     outline: none;
     border: none;
     padding: 8px;
-    border-radius: 5px;
+    border-radius: 0px;
 }
 
 .remove {
@@ -17,5 +17,5 @@
 }
 
 .load {
-    background-color: var(--titleColor);
+    background-color: rgb(43, 150, 226);
 }
