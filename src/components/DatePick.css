@@ -14,10 +14,11 @@
     color: var(--dateColor);
     border: 1px solid var(--dateColor);
     outline: none;
+    height: 20px;
 }
 
 .calicon {
-    margin-top: -4px;
+    margin-top: -1px;
     color: var(--dateColor);
 
 }
@@ -31,8 +32,21 @@
     color: var(--dateColor);
 }
 
+.react-datepicker__year-dropdown .react-datepicker__year-option:first-child::before {
+    content: "\25B2";
+    position: absolute;
+    top: 5%;
+    left: 45%;
+    margin: auto;
+}
 
-@media screen and (max-width:640px) {
+
+.redBack {
+    color: red;
+}
+
+
+@media screen and (max-width:710px) {
     .date-main {
         flex-direction: column;
     }

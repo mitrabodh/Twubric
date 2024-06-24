@@ -4,12 +4,13 @@ import Load from "./Load"
 import styles from "./users.module.css"
 
 
-export default function Users({ users, total, onRemove, setUselen }: { users: any, total: number, onRemove: any, setUselen: any }) {
+export default function Users(prop: any) {
 
-    if (users?.length) {
+
+    if (prop.users?.length) {
         return (
             <div className={styles.main}>
-                <div className={styles.container}>{users.map((user: any) => {
+                <div className={styles.container}>{prop.users.map((user: any) => {
                     return (<div key={user.id} className={styles.card}  >
                         <img src={user.image} alt="" />
                         <div className={styles.flex}>
@@ -32,13 +33,13 @@ export default function Users({ users, total, onRemove, setUselen }: { users: an
                         </div>
                         <div className={styles.flex}>
                             <h5>{user.join_date}</h5>
-                            <Remove id={user.id} onRemove={onRemove} />
+                            <Remove id={user.id} onRemove={prop.onRemove} />
                         </div>
 
                     </div>)
                 })}
                 </div>
-                <div>{users.length < total ? <Load setUselen={setUselen}>Load More</Load> : ""}</div>
+                <div>{prop.users.length < prop.total ? <Load setUselen={prop.setUselen}>Load More</Load> : ""}</div>
             </div>
         )
     }

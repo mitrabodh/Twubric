@@ -7,36 +7,38 @@ import "./DatePick.css";
 
 registerLocale("es", es);
 
-export default function DatePick() {
-    const [startDate, setStartDate] = useState<Date | null>(null);
-    const [endDate, setEndDate] = useState<Date | null>(null);
+export default function DatePick(prop: any) {
+
     const [from, setFrom] = useState("From");
     const [to, setTo] = useState("To");
 
-    console.log(startDate?.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }), endDate?.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }));
+    // console.log(prop.startDate?.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }), prop.endDate?.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }));
 
     const onSelectFrom = (dt: any) => {
         setFrom(dt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }));
+        prop.setStartDate(dt);
     };
 
     const onSelectTo = (dt: any) => {
         setTo(dt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }));
+        prop.setEndDate(dt);
     }
 
     const reset = () => {
         setFrom("From");
         setTo("To");
-        setStartDate(null);
-        setEndDate(null);
+        prop.setStartDate(null);
+        prop.setEndDate(null);
     }
+
 
     return (
         <div className="date-main">
+            <label htmlFor='startDate'>Date filter:</label>
 
+            <DatePicker dateFormat="MMM d, YYYY" id='startDate' placeholderText={from} onSelect={(dt) => onSelectFrom(dt)} onChange={(dt) => prop.setStartDate(dt)} showIcon icon={<CiCalendar />} calendarIconClassName={(from === "From" && to !== "To") ? 'calicon  redBack' : 'calicon'} calendarClassName='calendar' openToDate={prop.startDate} scrollableYearDropdown showYearDropdown yearDropdownItemNumber={15} />
 
-            <DatePicker dateFormat="MMM d, YYYY" placeholderText={from} onSelect={(dt) => onSelectFrom(dt)} onChange={(dt) => setStartDate(dt)} maxDate={new Date()} showIcon icon={<CiCalendar />} calendarIconClassName='calicon' calendarClassName='calendar' />
-
-            <DatePicker dateFormat="MMM d, YYYY" placeholderText={to} onSelect={(dt) => onSelectTo(dt)} onChange={(dt) => setEndDate(dt)} maxDate={new Date()} showIcon icon={<CiCalendar />} calendarIconClassName='calicon' calendarClassName='calendar' />
+            <DatePicker dateFormat="MMM d, YYYY" placeholderText={to} onSelect={(dt) => onSelectTo(dt)} onChange={(dt) => prop.setEndDate(dt)} minDate={prop.startDate ? prop.startDate : ""} showIcon icon={<CiCalendar />} calendarIconClassName={(to === "To" && from !== "From") ? 'calicon  redBack' : 'calicon'} calendarClassName='calendar' openToDate={prop.endDate} scrollableYearDropdown showYearDropdown yearDropdownItemNumber={15} />
 
             <button onClick={reset}>Reset Date</button>
 
