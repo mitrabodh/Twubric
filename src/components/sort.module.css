@@ -45,7 +45,7 @@ ul li:first-child span {
 .menu {
     position: absolute;
     display: flex;
-    top: 85px;
+    top: 75px;
     flex-direction: column;
     color: white;
     width: 95px;
@@ -122,8 +122,8 @@ ul li:last-child {
 
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width:710px) {
     .menu {
-        top: 120px;
+        top: 130px;
     }
 }
