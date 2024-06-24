@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import { CiCalendar } from "react-icons/ci";
-import { es } from "date-fns/locale/es"
-import "react-datepicker/dist/react-datepicker.css"
+import "react-datepicker/dist/react-datepicker.css";
 import "./DatePick.css";
 
-registerLocale("es", es);
+
 
 export default function DatePick(prop: any) {
 
     const [from, setFrom] = useState("From");
     const [to, setTo] = useState("To");
 
-    // console.log(prop.startDate?.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }), prop.endDate?.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }));
+
 
     const onSelectFrom = (dt: any) => {
         setFrom(dt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }));

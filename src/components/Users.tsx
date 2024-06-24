@@ -33,7 +33,7 @@ export default function Users(prop: any) {
                         </div>
                         <div className={styles.flex}>
                             <h5>{user.join_date}</h5>
-                            <Remove id={user.id} onRemove={prop.onRemove} />
+                            <Remove uid={user.uid} onRemove={prop.onRemove} />
                         </div>
 
                     </div>)

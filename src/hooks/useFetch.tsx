@@ -21,7 +21,7 @@ export default function useFetch(criteria: any, startDate: any, endDate: any) {
     const [total, setTotal] = useState(0);
     const fetchData = async () => {
         try {
-            const res = await api.get(`/users`);
+            const res = await api.get(`/`);
             if (res && res.data) {
 
                 let dataArray = res.data.map((element: any) => ({ id: element.id, uid: element.uid, fullname: element.fullname, image: element.image, twubric: element.twubric, join_date: new Date(element.join_date * 1000).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) }));
@@ -105,9 +105,9 @@ export default function useFetch(criteria: any, startDate: any, endDate: any) {
     }, [setUsers, uselen, criteria, startDate, endDate])
 
 
-    function onRemove(id: string): usersData[] | undefined {
+    function onRemove(uid: number): usersData[] | undefined {
 
-        const usersUpdate = users?.filter(user => id !== user.id ? user : null) || null;
+        const usersUpdate = users?.filter(user => uid !== user.uid ? user : null) || null;
         setUsers(usersUpdate);
         return
     }

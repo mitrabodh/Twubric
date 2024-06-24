@@ -26,11 +26,6 @@ function App() {
     users,
   };
 
-  // console.log(Date.parse(startDate), endDate);
-  // if (startDate && endDate) {
-  //   console.log(startDate > endDate);
-  // }
-
 
   return (
     <div className="App">
