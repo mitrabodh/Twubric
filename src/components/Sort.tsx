@@ -4,7 +4,7 @@ import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { IoIosArrowDropupCircle } from "react-icons/io";
 
 
-export default function Sort({ criteria, setCriteria }: { criteria: any, setCriteria: any }) {
+export default React.memo(function Sort({ criteria, setCriteria }: { criteria: any, setCriteria: any }) {
     const [show, setShow] = useState<boolean>(false);
 
     const arr = [{ key: 2, cat: "Total" }, { key: 3, cat: "Friends" }, { key: 4, cat: "Influence" }, { key: 5, cat: "Chirpiness" }];
@@ -28,4 +28,4 @@ export default function Sort({ criteria, setCriteria }: { criteria: any, setCrit
             }
         </div >
     )
-}
+});

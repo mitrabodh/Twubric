@@ -1,17 +1,18 @@
 import React from 'react'
 import Remove from "./Remove"
 import Load from "./Load"
+import NoFollowers from './NoFollowers'
 import styles from "./users.module.css"
 
 
-export default function Users(prop: any) {
+export default React.memo(function Users(prop: any) {
 
 
-    if (prop.users?.length) {
+    if (prop.users?.length > 0) {
         return (
             <div className={styles.main}>
                 <div className={styles.container}>{prop.users.map((user: any) => {
-                    return (<div key={user.id} className={styles.card}  >
+                    return (<div key={user.uid} className={styles.card}  >
                         <img src={user.image} alt="" />
                         <div className={styles.flex}>
                             <h3>{user.fullname}</h3>
@@ -43,7 +44,7 @@ export default function Users(prop: any) {
             </div>
         )
     }
-    return (<p>You have zero followers.</p>)
 
+    return (<NoFollowers />);
 
-}
+});

@@ -6,7 +6,7 @@ import "./DatePick.css";
 
 
 
-export default function DatePick(prop: any) {
+export default React.memo(function DatePick(prop: any) {
 
     const [from, setFrom] = useState("From");
     const [to, setTo] = useState("To");
@@ -44,4 +44,4 @@ export default function DatePick(prop: any) {
 
         </div>
     );
-}
+});

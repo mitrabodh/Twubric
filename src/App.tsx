@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { lazy, useState, Suspense } from 'react';
 import User from "./components/Users"
 import Sort from "./components/Sort"
 import DatePick from './components/DatePick';
+import NoFollowers from './components/NoFollowers';
 import useFetch from "./hooks/useFetch"
 import './App.css';
 
 
 const initialState = { total: null, friends: null, chirpiness: null, influence: null };
+
+const UserList = lazy(() => import("./components/Users"));
+
 function App() {
   const [startDate, setStartDate] = useState<any>(null);
   const [endDate, setEndDate] = useState<any>(null);
@@ -33,7 +37,11 @@ function App() {
         <DatePick {...props} />
         <Sort criteria={criteria} setCriteria={setCriteria} />
       </div>
-      <User {...props} />
+
+      <Suspense fallback="loading...">
+        <UserList {...props} />
+      </Suspense>
+
     </div>
   );
 }
