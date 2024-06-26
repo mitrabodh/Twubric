@@ -5,7 +5,7 @@
 }
 
 
-
+/* Container of the entire Sort section */
 .container {
     display: flex;
     flex-direction: column;
@@ -13,6 +13,7 @@
     align-items: center;
 }
 
+/* The Sort by button */
 button {
     background-color: var(--sort);
     color: white;
@@ -26,22 +27,13 @@ button {
 }
 
 
-ul li:first-child {
-    position: relative;
-
-}
-
-ul li:first-child span {
-    position: absolute;
-    right: 5px;
-}
-
-
+/* Style for the Sort by button */
 .dropdown {
     margin-top: 20px;
 
 }
 
+/* Container for the criteria div group */
 .menu {
     position: absolute;
     display: flex;
@@ -50,24 +42,18 @@ ul li:first-child span {
     color: white;
     width: 95px;
     max-width: 95px;
-
     background-color: var(--sort);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
+/* Direct childs of menu container */
 .menu>div {
     padding: 10px;
 }
 
-
-
 .menu>div:hover {
     cursor: pointer;
     background-color: var(--select);
-}
-
-.select {
-    background-color: var(--select)
 }
 
 .menu>div:last-child:hover {
@@ -78,35 +64,11 @@ ul li:first-child span {
     border-radius: 5px 5px 0 0;
 }
 
-ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 2vh;
+/* Criteria select style */
+.select {
+    background-color: var(--select)
 }
 
-
-
-ul li {
-    min-width: 150px;
-    border-bottom: 2px solid rgb(255, 255, 255);
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: rgb(226, 237, 233);
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.7);
-    cursor: pointer;
-}
-
-ul li:nth-child(n+2):hover {
-    background-color: var(--titleColor);
-    color: rgb(255, 255, 255)
-}
-
-ul li:last-child {
-    border-radius: 0 0 5px 5px;
-}
 
 
 @media screen and (max-width:340px) {

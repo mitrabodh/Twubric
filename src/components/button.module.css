@@ -12,10 +12,12 @@
     border-radius: 0px;
 }
 
+/* bin */
 .remove {
     background-color: var(--deleteColor);
 }
 
+/* load more button */
 .load {
     background-color: rgb(43, 150, 226);
 }

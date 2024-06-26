@@ -2,6 +2,7 @@
     --dateColor: rgb(12, 12, 100);
 }
 
+/* The container of date fields */
 .date-main {
     margin-top: 20px;
     display: flex;
@@ -9,6 +10,7 @@
     align-items: center;
 }
 
+/* Datepicker input field */
 .react-datepicker__input-container input {
     padding: 5px 5px 5px 25px;
     color: var(--dateColor);
@@ -17,21 +19,25 @@
     height: 20px;
 }
 
+/* calendar icon */
 .calicon {
     margin-top: -1px;
     color: var(--dateColor);
 
 }
 
+/* Calendar */
 .calendar {
     margin-left: 80px;
 
 }
 
+/* Datepicker input field placeholder */
 .react-datepicker__input-container input::placeholder {
     color: var(--dateColor);
 }
 
+/* An arrow to add more later years in the year dropdown list  */
 .react-datepicker__year-dropdown .react-datepicker__year-option:first-child::before {
     content: "\25B2";
     position: absolute;
@@ -40,7 +46,7 @@
     margin: auto;
 }
 
-
+/* To turn the calendar icon red in conditions */
 .redBack {
     color: red;
 }

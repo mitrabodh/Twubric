@@ -1,9 +1,9 @@
 import React, { lazy, useState, Suspense } from 'react';
-import User from "./components/Users"
-import Sort from "./components/Sort"
+
+import Sort from "./components/Sort";
 import DatePick from './components/DatePick';
-import NoFollowers from './components/NoFollowers';
-import useFetch from "./hooks/useFetch"
+
+import useFetch from "./hooks/useFetch";
 import './App.css';
 
 
@@ -33,11 +33,15 @@ function App() {
 
   return (
     <div className="App">
+
+      {/* App header Start */}
       <div className='header'>
         <DatePick {...props} />
         <Sort criteria={criteria} setCriteria={setCriteria} />
       </div>
+      {/* App header end */}
 
+      {/* User List */}
       <Suspense fallback="loading...">
         <UserList {...props} />
       </Suspense>

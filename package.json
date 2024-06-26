@@ -1,5 +1,6 @@
 {
   "name": "twubric",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -42,5 +43,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "babel-jest": "^29.7.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^axios$": "axios/dist/node/axios.cjs"
+    }
   }
 }
