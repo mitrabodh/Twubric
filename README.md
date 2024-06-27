@@ -1,6 +1,7 @@
 ## Project Name: Twubric
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link to the working version of the app: https://twubric-one.vercel.app/
 
 ### Project Info
 1. The UI  displays a list of the user's Twitter followers in a grid.
